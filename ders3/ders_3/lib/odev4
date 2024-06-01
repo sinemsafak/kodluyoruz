@@ -1,0 +1,67 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.indigo,
+        leading: IconButton(
+          icon: const Icon(Icons.menu),
+          onPressed: () {},
+        ),
+        title: const Text('Hi-Kod'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.person),
+            onPressed: () {
+              print('İnsan ikonuna tıklandı!');
+            },
+          ),
+        ],
+      ),
+      body: Container(
+        color: const Color(0xFFBDF5F2),
+        child: Center(
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.indigo, 
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+            ),
+            onPressed: () {},
+            child: const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              child: Text(
+                'Hello World',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
